@@ -1,0 +1,4 @@
+&global   l=0 massp=1.0078 massn=1.0087 /
+&grids p1=2 p2=5 p3=10  np1=30 np2=30 rmax=15 nnu=500 /
+
+
