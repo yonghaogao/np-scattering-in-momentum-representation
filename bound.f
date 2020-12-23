@@ -40,21 +40,21 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-            E2=-2.0/hbarc
-            do while(abs(E2-E1)>1.E-6)
+       E2=-2.0/hbarc
+         do while(abs(E2-E1)>1.E-6)
             call eigenvalue(E1,lambda1,wf1)
             call eigenvalue(E2,lambda2,wf2)
             E=E2-(E1-E2)*(lambda2-1)/(lambda1-lambda2)
             E1=E2
             E2=E
-            end do
+         end do
         write(*,*) "bound state energy is", E*hbarc
-
+       wf=wf2
        sumdg=0.d0
        do i=1,np
-       sumdg=sumdg+wf2(i)*wf2(i)
+       sumdg=sumdg+wf(i)*wf(i)
        end do
-
+      
        write (*,*)
        write (*,*) ' norm of eigenvector from dgeev :',sumdg
 
